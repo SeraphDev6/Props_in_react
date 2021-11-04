@@ -1,5 +1,15 @@
 import './App.css';
-import PersonCard from './components/personCard'
+// import PersonCard from './components/personCard'
+
+const PersonCard = props => {
+  return(
+    <div>
+    <h2>{props.lastName}, {props.firstName}</h2>
+    <p>Age : {props.age}</p>
+    <p>Hair Color : {props.hairColor}</p>
+    </div>
+)
+}
 
 function App() {
   return (
