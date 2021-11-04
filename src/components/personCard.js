@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 // class PersonCard extends React.Component{
 //     constructor(props){
@@ -24,11 +24,20 @@ import React from 'react';
 // }
 
 const PersonCard = props => {
+    const [state,setState]=useState({
+        age:props.age
+    })
+    const happyBirthday = ()=>{
+        setState({
+            age:state.age+1
+        });
+    }
     return(
     <div>
     <h2>{props.lastName}, {props.firstName}</h2>
-    <p>Age : {props.age}</p>
+    <p>Age : {state.age}</p>
     <p>Hair Color : {props.hairColor}</p>
+    <button onClick={happyBirthday}>Happy Birthday {props.firstName} {props.lastName}!!</button>
     </div>
     )
 }
